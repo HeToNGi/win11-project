@@ -1,0 +1,194 @@
+.setting_content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.setting_left {
+  width: 300px;
+  height: 100%;
+}
+.setting_userinfo {
+  width: 100%;
+  /* height: 70px; */
+  padding: 20px 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.avatar_img {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 100%;
+  background-size: 100%;
+  margin-right: 30px;
+}
+.userinfo_name {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+.userinfo_name .name {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.search {
+  /* background: white; */
+  height: 40px;
+  width: 300px;
+  border: 0;
+  border-bottom: 1px solid #0067c0;
+  border-radius: 4px;
+  outline: none;
+  padding: 8px;
+  margin: 8px 0px 20px;
+  color: #000;
+  box-sizing: border-box;
+}
+.search:focus {
+  border-bottom: 2px solid #0067c0;
+}
+.setting_option {
+  height: calc(100% - 170px);
+  overflow: auto;
+  position: relative;
+}
+.option_item {
+  width: 300px;
+  height: 36px;
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.option_item img {
+  width: 20px;
+  margin-right: 20px;
+}
+.option_item_active {
+  background: rgba(0, 0, 0, .05);
+}
+.drak_class .option_item_active {
+  background: rgba(255, 255, 255, .05);
+}
+.select_active {
+  position: absolute;
+  width: 2px;
+  height: 10px;
+}
+
+.setting_right {
+  /* flex: 1 1 auto; */
+  width: calc(100% - 320px);
+  height: 100%;
+  margin-left: 20px;
+}
+.setting_right_title {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 20px 0;
+  top: 0px;
+  right: 0;
+  left: 0;
+}
+.setting_right_body {
+  /* height: calc(100% - 43px); */
+  height: 100%;
+  /* opacity: 0; */
+  /* transform: translateY(30px); */
+  overflow: auto;
+}
+.setting_right_body .tile {
+  width: 100%;
+  height: 67px;
+  margin-bottom: 5px;
+  /* padding: 0 10px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+  padding: 7px 20px;
+  border: 1px solid rgba(0, 0, 0, .1);
+}
+.light_class .tile:hover {
+  background: rgba(255, 255, 255, .33) !important;
+}
+.drak_class .tile:hover {
+  background: rgba(255, 255, 255, .1) !important;
+}
+
+.setting_right_body .tile img {
+  width: 15px;
+  height: 15px;
+}
+.setting_right_body .tile div {
+  flex: 1 1 auto;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.setting_icon {
+  font-family: 'SettingsIcons';
+}
+.setting_right_body .tile .name {
+  font-size: 14px;
+}
+.setting_right_body .tile .desc {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6)
+}
+.setting_right_body .subHeading {
+  font-weight: 500;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.setting_right_body .spacer {
+  padding: 8px;
+}
+
+.personalise_top {
+  height: 170px;
+  margin-bottom: 5px;
+  display: flex;
+}
+.display_personalise {
+  width: 270px;
+  /* background: #000; */
+  height: 100%;
+  border: 6px solid #000;
+  border-radius: 10px;
+}
+.display_personalise img {
+  width: 100%;
+  height: 100%;
+}
+.themes_content {
+  height: 100%;
+  flex: 1 1 auto;
+  margin-left: 20px;
+  font-weight: 500;
+}
+.themes_content_them {
+  margin-top: 10px;
+  display: flex;
+}
+.themes_content_them img {
+  width: 100%;
+  height: 100%;
+}
+.themes_content_them div {
+  width: 100px;
+  height: 70px;
+  /* border: 1px solid #000; */
+  margin-right: 10px;
+  border-radius: 3px;
+  overflow: hidden;
+}

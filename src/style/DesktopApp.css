@@ -1,0 +1,28 @@
+.dskApp {
+  margin: 4px;
+  height: 84px;
+  width: 74px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: .8em;
+  transition: all ease-in-out .2s;
+  justify-content: center;
+  border: 1px solid transparent;
+}
+.dskIcon img {
+  width: 36px;
+}
+.dskApp .appName {
+  text-align: center;
+  color: #fafafa;
+  margin-top: 4px;
+  text-shadow: 0 0 4px rgba(0, 0, 0, .6);
+}
+
+.dskApp:focus {
+  border: 1px dotted white;
+}
+.dskApp:focus {
+  background: rgba(255, 255, 255, .12);
+}

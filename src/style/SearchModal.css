@@ -1,0 +1,13 @@
+.search_content {
+  width: 30%;
+  height: 70%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -20px;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 10px;
+  opacity: 0;
+  display: none;
+}

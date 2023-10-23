@@ -1,0 +1,10 @@
+.pane_content {
+  position: fixed;
+  right: 10px;
+  bottom: 40px;
+  width: 400px;
+  height: 400px;
+  background: #fff;
+  border-radius: 10px;
+  opacity: 0;
+}
