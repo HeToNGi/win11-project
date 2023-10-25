@@ -14,7 +14,6 @@ function Window({appName, app}) {
   const dispatch = useDispatch();
   const [zIndex, setZIndex] = useState(10);
 
-
   useEffect(()=> {
     const data = windowAppData;
     setZIndex(windowAppData.zIndex);

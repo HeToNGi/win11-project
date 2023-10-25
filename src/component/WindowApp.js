@@ -5,17 +5,23 @@ import Settings from './WindowContent/Settings';
 import Explorer from './WindowContent/Explorer';
 import Google from './WindowContent/Google';
 import Store from './WindowContent/Store';
-import Window from './Window'
+import Window from './Window';
+import Currency from './WindowContent/Currency';
 
 function WindowApp() {
   const windowApps = useSelector((state) => state.window_apps);
   const [windowAppList, setWindowAppList] = useState([]);
   const con = (appName) => {
+    let parameter = {}
+    if (windowApps[appName]) {
+      parameter = windowApps[appName].parameter || {};
+    }
     switch(appName) {
-      case 'settings': return <Settings />;
-      case 'explorer': return <Explorer />;
-      case 'google': return <Google />;
-      case 'store': return <Store />;
+      case 'settings': return <Settings parameter={parameter} />;
+      case 'explorer': return <Explorer parameter={parameter}  />;
+      case 'google': return <Google parameter={parameter} />;
+      case 'store': return <Store parameter={parameter} />;
+      case 'het': return <Currency parameter={parameter} />;
       default: return ''
     }
   }

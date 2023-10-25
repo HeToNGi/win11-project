@@ -318,3 +318,64 @@ export const themes = [{
   name: 'dark_class',
   desktop_background_image: '/斑马斑马.jpg'
 }]
+export const APP_PRO = {
+  thisPc: {
+    icon: '/app/user.png',
+    appName: 'thisPc',
+    title: 'This Pc',
+    taskbar: false,
+    desktopShortcut: true,
+  },
+  settings: {
+    appName: 'settings',
+    title: 'Settings',
+    icon: '/app/settings.png',
+    taskbar: true,
+    desktopShortcut: false,
+  },
+  explorer: {
+    appName: 'explorer',
+    title: 'Explorer',
+    icon: '/app/explorer.png',
+    taskbar: true,
+    desktopShortcut: true,
+  },
+  google: {
+    appName: 'google',
+    title: 'Google',
+    icon: '/app/google.svg',
+    taskbar: true,
+    desktopShortcut: true,
+  },
+  store: {
+    appName: 'store',
+    title: 'Store',
+    icon: '/app/store.png',
+    taskbar: true,
+    desktopShortcut: true,
+  },
+  unescape: {
+    icon: '/app/unescape.png',
+    title: 'Unescape',
+    appName: 'unescape',
+    taskbar: false,
+    desktopShortcut: true,
+  },
+  recycleBin: {
+    icon: '/app/bin0.png',
+    appName: 'recycleBin',
+    title: 'Recycle Bin',
+    taskbar: false,
+    desktopShortcut: true,
+  },
+  het: {
+    icon: 'http://152.136.52.163:4000/favicon.ico',
+    title: 'HeT.',
+    appName: 'het',
+    taskbar: false,
+    desktopShortcut: true,
+    parameter: {
+      src: 'http://152.136.52.163:4000'
+    }
+  }
+}

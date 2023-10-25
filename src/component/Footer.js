@@ -15,9 +15,18 @@ function Footer() {
   const textColor = useSelector((state) => state.themes.textColor);
   const modalShowMap = useSelector((state) => state.modal_show_map);
   const windowApps = useSelector((state) => state.window_apps);
-  // const time = useSelector(s => s.time);
+  const taskbarApp = useSelector(s => {
+    const arr = [];
+    const desktop_applications = s.desktop_applications;
+    for (let k in desktop_applications) {
+      if (desktop_applications[k].taskbar) {
+        arr.push(desktop_applications[k]);
+      }
+    }
+    return arr;
+  });
   const dispatch = useDispatch();
-  const onToolbarBtnClick = (toolbarName, type, icon, title) => {
+  const onToolbarBtnClick = (toolbarName, type) => {
     switch(type) {
       case 'modal':
         const { type, valueKey} = modalMap[toolbarName] || {};
@@ -26,11 +35,11 @@ function Footer() {
         }
         break;
       case 'window':
-        windowHandler(toolbarName, icon, title);
+        windowHandler(toolbarName);
         break;
     }
   }
-  const windowHandler = (appName, icon, title) => {
+  const windowHandler = (appName) => {
     if (windowApps[appName]) {
       dispatch({
         type: 'CHANGE_WINDOW',
@@ -41,18 +50,12 @@ function Footer() {
         }
       })
     } else {
-      const value = {};
-      value[appName] = {
+      const value = {
         appName,
-        status: 1, // 0缩小 1打开
         width: window.innerWidth/2,
         height: window.innerHeight/2,
         top: '200px',
         left: '200px',
-        isMax: false,
-        zIndex: 20,
-        icon: icon,
-        title: title,
       }
       dispatch({
         type: 'OPEN_WINDOW_APP',
@@ -69,10 +72,16 @@ function Footer() {
         <Col className='footer_center' span={8}>
           <ToolbarButton toolbarName='menu' type="modal" icon="/app/home.png" onToolbarBtnClick={onToolbarBtnClick} />
           <ToolbarButton toolbarName='search' type="modal" icon="/app/search.svg" onToolbarBtnClick={onToolbarBtnClick} />
-          <ToolbarButton toolbarName='settings' type="window" title="Settings" status={windowApps.settings ? windowApps.settings.status : undefined} icon="/app/settings.png" onToolbarBtnClick={onToolbarBtnClick} />
-          <ToolbarButton toolbarName='explorer' type="window" title="Explorer" status={windowApps.explorer ? windowApps.explorer.status : undefined} icon="/app/explorer.png" onToolbarBtnClick={onToolbarBtnClick} />
-          <ToolbarButton toolbarName='google' type="window" title="Google" status={windowApps.google ? windowApps.google.status : undefined} icon="/app/google.svg" onToolbarBtnClick={onToolbarBtnClick} />
-          <ToolbarButton toolbarName='store' type="window" title="Store"  status={windowApps.store ? windowApps.store.status : undefined} icon="/app/store.png" onToolbarBtnClick={onToolbarBtnClick} />
+          {taskbarApp.map(app => {
+            return <ToolbarButton key={app.appName} toolbarName={app.appName} type="window" status={windowApps[app.appName] ? windowApps[app.appName].status : undefined} icon={app.icon} onToolbarBtnClick={onToolbarBtnClick} />
+          })}
+          {Object.keys(windowApps).map(appName => {
+            if (taskbarApp.findIndex((i) => i.appName === appName) === -1) {
+              const app = windowApps[appName];
+              return <ToolbarButton key={app.appName} toolbarName={app.appName} type="window" status={windowApps[app.appName] ? windowApps[app.appName].status : undefined} icon={app.icon} onToolbarBtnClick={onToolbarBtnClick} />
+            }
+            return ''
+          })}
         </Col>
         <Col className='footer_right' span={8}>
           <div onClick={() => {onToolbarBtnClick('bandtogg', 'modal')}} className='footer_more hoverBackground'>

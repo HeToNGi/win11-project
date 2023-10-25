@@ -9,7 +9,16 @@ import { modalMap } from './util/constant';
 
 function App() {
   let focusApp = '';
-  const desktopApplications = useSelector(s => s.desktop_applications);
+  const desktopApplications = useSelector(s => {
+    const arr = [];
+    const desktop_applications = s.desktop_applications;
+    for (let k in desktop_applications) {
+      if (desktop_applications[k].desktopShortcut) {
+        arr.push(desktop_applications[k]);
+      }
+    }
+    return arr;
+  });
   const modalShowMap = useSelector((state) => state.modal_show_map);
   const themeName = useSelector((state) => state.themes.name);
   const desktop_background_image = useSelector((state) => state.themes.desktop_background_image);
