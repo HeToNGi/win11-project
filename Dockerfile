@@ -1,5 +1,5 @@
 # 使用 Node.js 作为基础镜像
-FROM node:15
+FROM node:16
 
 # 设置工作目录
 WORKDIR /app

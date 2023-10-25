@@ -41,7 +41,7 @@
   padding: 3px;
   text-align: left;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
