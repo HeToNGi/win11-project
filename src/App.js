@@ -56,8 +56,8 @@ function App() {
     const key = e.target.dataset.blur_close_key;
     if (e.target) {
       for (var m in modalMap) {
-        const { type, valueKey } = modalMap[m];
-        if (type === key || !modalShowMap[valueKey]) continue;
+        const { type, valueKey, noBlur } = modalMap[m];
+        if (type === key || !modalShowMap[valueKey] || noBlur) continue;
         dispatch({ type: type, value: false });
       }
     }

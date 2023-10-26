@@ -17,6 +17,7 @@ const initialState = {
     bandtogg_show: false,
     panetogg_show: false,
     calntogg_show: false,
+    aiDialogBox_show: false,
   },
   window_apps: {},
   window_apps_order: [],
@@ -55,6 +56,8 @@ const reducer = (state = initialState, action) => {
       return {...state, modal_show_map: {...state.modal_show_map, panetogg_show: action.value}}
     case 'CHANGE_CALNTOGG_SHOW':
       return {...state, modal_show_map: {...state.modal_show_map, calntogg_show: action.value}}
+    case 'CHANGE_AIDIALOGBOX_SHOW':
+      return {...state, modal_show_map: {...state.modal_show_map, aiDialogBox_show: action.value}}
     case 'OPEN_WINDOW_APP':
       const appKey = action.value.appName;
       if (!appKey) return state;

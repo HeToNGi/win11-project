@@ -22,6 +22,11 @@ export const modalMap = {
   calntogg: {
     type: 'CHANGE_CALNTOGG_SHOW',
     valueKey: 'calntogg_show',
+  },
+  aiDialogBox: {
+    type: 'CHANGE_AIDIALOGBOX_SHOW',
+    valueKey: 'aiDialogBox_show',
+    noBlur: true,
   }
 }
 export const layoutMap = [{
