@@ -62,7 +62,11 @@ function AIdialogBox({ show }) {
       messages: m,
     }).then((res) => {
       setLoading(false);
-      if (!res.data.result) return;
+      const ans = res.data.result
+      if (!res.data.result) {
+        setProhibitSending(false);
+        return;
+      };
       const r = res.data.result.split('');
       let count = 0;
       let t = setInterval(() => {
