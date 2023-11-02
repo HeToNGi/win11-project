@@ -382,5 +382,109 @@ export const APP_PRO = {
     parameter: {
       src: 'http://152.136.52.163:4000'
     }
+  },
+  camera: {
+    icon: '/app/camera.svg',
+    title: 'Camera',
+    appName: 'camera',
+    taskbar: false,
+    desktopShortcut: false,
+  },
+  facetime: {
+    icon: '/app/facetime.svg',
+    title: 'FaceTime',
+    appName: 'facetime',
+    taskbar: false,
+    desktopShortcut: false,
   }
 }
+export const ALL_APPS = [
+    {
+      icon: '/app/user.png',
+      appName: 'thisPc',
+      title: 'This Pc',
+      isPinned: false,
+    },{
+      icon: '/app/calculator.svg',
+      title: 'Calculator',
+      appName: 'calculator',
+      isPinned: true,
+    }, {
+      icon: '/app/taskmanger.svg',
+      title: 'Task Manger',
+      appName: 'taskmanger',
+      isPinned: true,
+    }, {
+      icon: '/app/github.svg',
+      title: 'GitHub',
+      appName: 'github',
+      isPinned: true,
+    }, {
+      appName: 'settings',
+      title: 'Settings',
+      icon: '/app/settings.png',
+      isPinned: true,
+    }, {
+      appName: 'explorer',
+      title: 'Explorer',
+      icon: '/app/explorer.png',
+      isPinned: true,
+    }, {
+      appName: 'google',
+      title: 'Google',
+      icon: '/app/google.svg',
+      isPinned: true,
+    }, {
+      appName: 'store',
+      title: 'Store',
+      icon: '/app/store.png',
+      isPinned: true,
+    }, {
+      icon: '/app/unescape.png',
+      title: 'Unescape',
+      appName: 'unescape',
+      isPinned: true,
+    }, {
+      icon: '/app/bin0.png',
+      appName: 'recycleBin',
+      title: 'Recycle Bin',
+      isPinned: false,
+    }, {
+      icon: 'http://152.136.52.163:4000/favicon.ico',
+      title: 'HeT.',
+      appName: 'het',
+      isPinned: true,
+      parameter: {
+        src: 'http://152.136.52.163:4000'
+      }
+    }, {
+      icon: '/app/email.svg',
+      title: 'Email',
+      appName: 'email',
+      isPinned: true,
+    }, {
+      icon: '/app/started.svg',
+      title: 'Get Started',
+      appName: 'started',
+      isPinned: true,
+    }, {
+      icon: '/app/noted.svg',
+      title: 'NotePad',
+      appName: 'noted',
+      isPinned: true,
+    }, {
+      icon: '/app/whiteborad.svg',
+      title: 'Whiteborad',
+      appName: 'whiteborad',
+      isPinned: true,
+  }, {
+      icon: '/app/camera.svg',
+      title: 'Camera',
+      appName: 'camera',
+      isPinned: true,
+  }, {
+    icon: '/app/facetime.svg',
+    title: 'FaceTime',
+    appName: 'facetime',
+    isPinned: true,
+  }]

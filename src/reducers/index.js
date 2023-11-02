@@ -95,7 +95,7 @@ const reducer = (state = initialState, action) => {
         state.window_apps_order.push(appName);
       }
       const aChange = {...state.window_apps}
-      if (action.value.zIndex === 10 || !action.value.zIndex) {
+      if ((action.value.zIndex === 10 || !action.value.zIndex) && aChange[state.window_apps_order[state.window_apps_order.length - 1]]) {
         aChange[state.window_apps_order[state.window_apps_order.length - 1]].zIndex = 20;
       }
       aChange[action.value.appName] = {...aChange[action.value.appName], ...action.value};

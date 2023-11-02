@@ -22,8 +22,10 @@
   height: 60px;
   overflow: hidden;
   border-radius: 100%;
-  background-size: 100%;
   margin-right: 30px;
+}
+.avatar_img img {
+  width: 100%;
 }
 .userinfo_name {
   display: flex;

@@ -7,6 +7,8 @@ import Google from './WindowContent/Google';
 import Store from './WindowContent/Store';
 import Window from './Window';
 import Currency from './WindowContent/Currency';
+import Camera from './WindowContent/Camera';
+import FaceTime from './WindowContent/FaceTime';
 
 function WindowApp() {
   const windowApps = useSelector((state) => state.window_apps);
@@ -22,6 +24,8 @@ function WindowApp() {
       case 'google': return <Google parameter={parameter} />;
       case 'store': return <Store parameter={parameter} />;
       case 'het': return <Currency parameter={parameter} />;
+      case 'camera': return <Camera parameter={parameter} />;
+      case 'facetime': return <FaceTime parameter={parameter} />;
       default: return ''
     }
   }

@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { modalMap } from './util/constant';
 
 function App() {
-  let focusApp = '';
+  const [focusApp, setFocusApp] = useState(null);
   const desktopApplications = useSelector(s => {
     const arr = [];
     const desktop_applications = s.desktop_applications;
@@ -23,14 +23,9 @@ function App() {
   const themeName = useSelector((state) => state.themes.name);
   const desktop_background_image = useSelector((state) => state.themes.desktop_background_image);
   const dispatch = useDispatch();
-  useEffect(() => {
-    setInterval(() => {
-      dispatch({ type: 'UPDATE'});
-    }, 1000)
-  }, [])
   const desktopAppMouseDown = (e) => {
     if (e.target.getAttribute('needscale')) {
-      focusApp = e.target
+      setFocusApp(e.target);
       anime({
         targets: [e.target],
         scale: '0.5',
@@ -48,7 +43,7 @@ function App() {
         easing: 'easeInOutQuad'
       }).play();
     }
-    focusApp = '';
+    setFocusApp(null);
   }
 
   // 桌面被点击，任何部位
