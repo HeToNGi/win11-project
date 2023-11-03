@@ -9,7 +9,9 @@ import { useSelector, useDispatch } from 'react-redux';
 const UserInfo = () => {
   return (
     <div className='hoverBackground_2 setting_userinfo'>
-      <div className='avatar_img' style={{backgroundImage: 'url("https://images.unsplash.com/photo-1695765586912-39758d5de97d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDcxfEpwZzZLaWRsLUhrfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60")'}}></div>
+      <div className='avatar_img'>
+        <img src="https://images.unsplash.com/photo-1695765586912-39758d5de97d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDcxfEpwZzZLaWRsLUhrfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60" />
+      </div>
       <div className='userinfo_name'>
         <span className='name'>
           HeT
@@ -114,8 +116,8 @@ function Settings({}) {
   const renderPersonaliseTop = (n, ele) => {
     return (
       <div key={n + ele.type} className='personalise_top'>
-        <div className='display_personalise' style={{background: `url(${desktop_background_image})`}}>
-          <img src={desktop_background_image} />
+        <div className='display_personalise'>
+          <img src={desktop_background_image}  alt='desktop_background_image'/>
         </div>
         <div className='themes_content'>
           <div>Select a theme to apply</div>
@@ -123,7 +125,7 @@ function Settings({}) {
             {themes.map(t => {
               return (
                 <div key={t.name} style={{border: themeName === t.name ? `2px solid ${activeColor}` : 'none'}} onClick={() => {onChangeThemes(t)}}>
-                  <img src={t.desktop_background_image} />
+                  <img src={t.desktop_background_image} alt="desktop_background_image" />
                 </div>
               )
             })}

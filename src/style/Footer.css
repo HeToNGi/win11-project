@@ -41,6 +41,14 @@
 .panetogg_class img {
   width: 15px;
 }
+.ai-btn-class {
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 5px
+}
+.ai-btn-class img {
+  width: 15px;
+}
 .taskDate {
   height: 100%;
   font-size: 12px;

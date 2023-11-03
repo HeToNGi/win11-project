@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { APP_PRO } from '../util/constant.js'
 const dayMap = {
   1: '一',
   2: '二',
@@ -16,6 +17,7 @@ const initialState = {
     bandtogg_show: false,
     panetogg_show: false,
     calntogg_show: false,
+    aiDialogBox_show: false,
   },
   window_apps: {},
   window_apps_order: [],
@@ -38,32 +40,7 @@ const initialState = {
     activeColor: '#0067c0',
     desktop_background_image: '/像是秋天.jpg',
   },
-  desktop_applications: [
-    {
-      icon: '/app/user.png',
-      appName: '我的电脑',
-    },
-    {
-      icon: '/app/unescape.png',
-      appName: 'Unescape',
-    },
-    {
-      icon: '/app/bin0.png',
-      appName: '回收站',
-    },
-    {
-      icon: '/app/store.png',
-      appName: 'Store',
-    },
-    {
-      icon: '/app/explorer.png',
-      appName: 'Explorer',
-    },
-    {
-      icon: '/app/google.svg',
-      appName: 'Google',
-    }
-  ]
+  desktop_applications: APP_PRO
 }
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -79,12 +56,31 @@ const reducer = (state = initialState, action) => {
       return {...state, modal_show_map: {...state.modal_show_map, panetogg_show: action.value}}
     case 'CHANGE_CALNTOGG_SHOW':
       return {...state, modal_show_map: {...state.modal_show_map, calntogg_show: action.value}}
+    case 'CHANGE_AIDIALOGBOX_SHOW':
+      return {...state, modal_show_map: {...state.modal_show_map, aiDialogBox_show: action.value}}
     case 'OPEN_WINDOW_APP':
+      const appKey = action.value.appName;
+      if (!appKey) return state;
       for (let k in state.window_apps) {
         state.window_apps[k].zIndex = 10;
       }
-      state.window_apps_order.push(Object.keys(action.value)[0]);
-      return {...state, window_apps: {...state.window_apps, ...action.value}}
+      let apps = state.window_apps;
+      let baseSize = {
+        status: 1, // 0缩小 1打开
+        width: '300px',
+        height: '200px',
+        top: '200px',
+        left: '200px',
+        isMax: false,
+        zIndex: 20,
+      }
+      if (APP_PRO[appKey]) {
+        apps[appKey] = {...APP_PRO[appKey], ...baseSize, ...action.value}
+      } else {
+        apps[appKey] = {...baseSize, ...action.value}
+      }
+      state.window_apps_order.push(action.value.appName);
+      return {...state, window_apps: {...apps}};
     case 'CHANGE_WINDOW':
       const appName = action.value.appName;
       if (action.value.zIndex) {
@@ -99,7 +95,7 @@ const reducer = (state = initialState, action) => {
         state.window_apps_order.push(appName);
       }
       const aChange = {...state.window_apps}
-      if (action.value.zIndex === 10 || !action.value.zIndex) {
+      if ((action.value.zIndex === 10 || !action.value.zIndex) && aChange[state.window_apps_order[state.window_apps_order.length - 1]]) {
         aChange[state.window_apps_order[state.window_apps_order.length - 1]].zIndex = 20;
       }
       aChange[action.value.appName] = {...aChange[action.value.appName], ...action.value};
@@ -140,6 +136,9 @@ const reducer = (state = initialState, action) => {
         activeColor: '#0067c0',
         desktop_background_image: action.value === 'light_class' ? '/像是秋天.jpg' : '/斑马斑马.jpg',
       }
+      return {...state}
+    case 'CHANGE_SRC':
+      state.google.src = action.value;
       return {...state}
     default:
       return state
