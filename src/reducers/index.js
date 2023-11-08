@@ -40,7 +40,15 @@ const initialState = {
     activeColor: '#0067c0',
     desktop_background_image: '/像是秋天.jpg',
   },
-  desktop_applications: APP_PRO
+  desktop_applications: APP_PRO,
+  tool: {
+    'WiFi': false,
+    'Bluetooth': false,
+    'FlightMode': false,
+    'BatterySaver': false,
+    'Theme': false,
+    'NightLight': false,
+  }
 }
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -133,13 +141,18 @@ const reducer = (state = initialState, action) => {
         backgroundColor_2: action.value === 'light_class' ? '#ffffff' : 'rgba(255,255,255,.05)',
         backgroundColor_3: 'rgba(242, 242, 242, 0.9)',
         textColor: action.value === 'light_class' ? '#000000' : 'rgba(255, 255, 255, 0.7)',
-        activeColor: '#0067c0',
+        activeColor: action.value === 'light_class' ? '#0067c0' : '#4cc2ff',
         desktop_background_image: action.value === 'light_class' ? '/像是秋天.jpg' : '/斑马斑马.jpg',
       }
       return {...state}
     case 'CHANGE_SRC':
       state.google.src = action.value;
       return {...state}
+    
+    case 'CHANGE_TOOL': 
+      const newTool = {...state.tool}
+      newTool[action.value] = !newTool[action.value]
+    return {...state, tool: newTool}
     default:
       return state
   }
