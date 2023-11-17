@@ -49,6 +49,14 @@ const initialState = {
     avatar_img: '',
     telephone_number: '',
     contacts: [],
+  },
+  tool: {
+    'WiFi': false,
+    'Bluetooth': false,
+    'FlightMode': false,
+    'BatterySaver': false,
+    'Theme': false,
+    'NightLight': false,
   }
 }
 const reducer = (state = initialState, action) => {
@@ -141,7 +149,7 @@ const reducer = (state = initialState, action) => {
         backgroundColor_2: action.value === 'light_class' ? '#ffffff' : 'rgba(255,255,255,.05)',
         backgroundColor_3: 'rgba(242, 242, 242, 0.9)',
         textColor: action.value === 'light_class' ? '#000000' : 'rgba(255, 255, 255, 0.7)',
-        activeColor: '#0067c0',
+        activeColor: action.value === 'light_class' ? '#0067c0' : '#4cc2ff',
         desktop_background_image: action.value === 'light_class' ? light_img : drak_img,
       }
       return {...state}
@@ -152,6 +160,10 @@ const reducer = (state = initialState, action) => {
       return {...state, showLogin: action.value}
     case 'CHANGE_USER_INFO':
       return {...state, user_info: {...state.user_info, ...action.value}}
+    case 'CHANGE_TOOL': 
+      const newTool = {...state.tool}
+      newTool[action.value] = !newTool[action.value]
+    return {...state, tool: newTool}
     default:
       return state
   }
