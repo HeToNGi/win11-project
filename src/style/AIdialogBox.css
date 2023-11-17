@@ -3,7 +3,7 @@
   right: 10px;
   bottom: 40px;
   width: 400px;
-  /* height: 700px; */
+  height: 90%;
   background: #fff;
   border-radius: 10px;
   opacity: 0;
@@ -29,7 +29,8 @@
 }
 .show_message_class {
   width: 350px;
-  height: 500px;
+  /* height: 500px; */
+  height: 70%;
   margin: 0 auto 10px auto;
   border-radius: 5px;
   padding: 10px 0;
@@ -37,7 +38,8 @@
 }
 .input_message {
   width: 350px;
-  height: 100px;
+  /* height: 100px; */
+  height: calc(30% - 40px);
   margin: 0 auto;
   border-radius: 5px;
   padding: 5px;

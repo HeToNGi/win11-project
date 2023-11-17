@@ -3,6 +3,8 @@
   height: 100%;
   background-size: cover;
   background-position: center center;
+  z-index: 3;
+  position: relative;
 }
 
 .App-logo {
@@ -52,4 +54,8 @@
   left: 0;
   right: 0;
   bottom: 5%;
+}
+.notification_btn {
+  width: 30px;
+  height: 30px;
 }

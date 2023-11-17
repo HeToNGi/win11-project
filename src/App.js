@@ -1,14 +1,18 @@
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import './App.css';
 import DesktopApp  from './component/DesktopApp';
 import Footer from './component/Footer';
+import FaceTimeNotification from './component/WindowContent/FaceTime/FaceTimeNotification';
 import WindowApp from './component/WindowApp';
+import Login from './Login'
 import anime from 'animejs';
 import { useSelector, useDispatch } from 'react-redux';
 import { modalMap } from './util/constant';
 
+
 function App() {
   const [focusApp, setFocusApp] = useState(null);
+  const dispatch = useDispatch();
   const desktopApplications = useSelector(s => {
     const arr = [];
     const desktop_applications = s.desktop_applications;
@@ -22,7 +26,7 @@ function App() {
   const modalShowMap = useSelector((state) => state.modal_show_map);
   const themeName = useSelector((state) => state.themes.name);
   const desktop_background_image = useSelector((state) => state.themes.desktop_background_image);
-  const dispatch = useDispatch();
+  
   const desktopAppMouseDown = (e) => {
     if (e.target.getAttribute('needscale')) {
       setFocusApp(e.target);
@@ -57,18 +61,23 @@ function App() {
       }
     }
   }
+
   return (
-    <div onClick={onDisktopClick} onMouseDown={desktopAppMouseDown} onMouseUp={desktopAppMouseUp} className={`App ${themeName}`} style={{backgroundImage: `url(${desktop_background_image})`}}>
-      <div className='desktop_class'>
-        <div className='desktop_cont'>
-          {desktopApplications.map((app, i) => {
-            return <DesktopApp key={i} appIcon={app} />
-          })}
+    <Fragment>
+      <Login />
+      <FaceTimeNotification />
+      <div onClick={onDisktopClick} onMouseDown={desktopAppMouseDown} onMouseUp={desktopAppMouseUp} className={`App ${themeName}`} style={{backgroundImage: `url(${desktop_background_image})`}}>
+        <div className='desktop_class'>
+          <div className='desktop_cont'>
+            {desktopApplications.map((app, i) => {
+              return <DesktopApp key={i} appIcon={app} />
+            })}
+          </div>
+          <WindowApp />
         </div>
-        <WindowApp />
+        <Footer/>
       </div>
-      <Footer/>
-    </div>
+    </Fragment>
   );
 }
 

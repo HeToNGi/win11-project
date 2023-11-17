@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux'
 import { APP_PRO } from '../util/constant.js'
+import light_img from '../assets/像是秋天.jpg';
+import drak_img from '../assets/斑马斑马.jpg';
 const dayMap = {
   1: '一',
   2: '二',
@@ -38,9 +40,16 @@ const initialState = {
     backgroundColor_3: 'rgba(242, 242, 242, 0.9)',
     textColor: '#000000',
     activeColor: '#0067c0',
-    desktop_background_image: '/像是秋天.jpg',
+    desktop_background_image: light_img,
   },
-  desktop_applications: APP_PRO
+  desktop_applications: APP_PRO,
+  showLogin: true,
+  user_info: {
+    user_name: '',
+    avatar_img: '',
+    telephone_number: '',
+    contacts: [],
+  }
 }
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -109,7 +118,7 @@ const reducer = (state = initialState, action) => {
         aClose[topAppName].zIndex = 20
       }
       return {...state, window_apps: aClose};
-    case 'UPDATE':
+    case 'UPDATA_TIME':
       let t = new Date();
       state.time = {
         year: t.getFullYear(), // 年
@@ -122,7 +131,6 @@ const reducer = (state = initialState, action) => {
         dayString: '星期' + dayMap[t.getDay()]
       }
       return {...state}
-      break;
     case 'CHANGE_THEMES_PRO':
       state.themes = {...state.themes, ...action.value}
       return {...state}
@@ -134,12 +142,16 @@ const reducer = (state = initialState, action) => {
         backgroundColor_3: 'rgba(242, 242, 242, 0.9)',
         textColor: action.value === 'light_class' ? '#000000' : 'rgba(255, 255, 255, 0.7)',
         activeColor: '#0067c0',
-        desktop_background_image: action.value === 'light_class' ? '/像是秋天.jpg' : '/斑马斑马.jpg',
+        desktop_background_image: action.value === 'light_class' ? light_img : drak_img,
       }
       return {...state}
     case 'CHANGE_SRC':
       state.google.src = action.value;
       return {...state}
+    case 'CHANGE_LOGIN':
+      return {...state, showLogin: action.value}
+    case 'CHANGE_USER_INFO':
+      return {...state, user_info: {...state.user_info, ...action.value}}
     default:
       return state
   }

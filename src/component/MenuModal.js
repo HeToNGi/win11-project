@@ -13,6 +13,8 @@ function MenuModal({ show }) {
   const backgroundColor_1 = useSelector((state) => state.themes.backgroundColor_1);
   const backgroundColor_2 = useSelector((state) => state.themes.backgroundColor_2);
   const textColor = useSelector((state) => state.themes.textColor);
+  const userName = useSelector((state) => state.user_info.user_name);
+  const avatarImg = useSelector((state) => state.user_info.avatar_img);
   const dispatch = useDispatch();
   const [currentPin, setCurrentPin] = useState('pinned');
   const [allApps, setAllApps] = useState(ALL_APPS);
@@ -59,7 +61,7 @@ function MenuModal({ show }) {
       </div>
     )
   }
-  AllAppList();
+  // AllAppList();
   useEffect(()=> {
     anime({
       targets: '.menu_content',
@@ -101,6 +103,19 @@ function MenuModal({ show }) {
     }).play();
   }
   const openApp = (appName) => {
+    if (appName === 'facetime') {
+      dispatch({
+        type: 'OPEN_WINDOW_APP',
+        value: {
+          appName: appName,
+          width: '700px',
+          height: '500px',
+          top: '50px',
+          left: '50px',
+        },
+      });
+      return;
+    }
     dispatch({
       type: 'OPEN_WINDOW_APP',
       value: {
@@ -156,8 +171,8 @@ function MenuModal({ show }) {
       </div>
       <div data-blur_close_key="CHANGE_MENU_SHOW" className='menuBar' style={{ background: backgroundColor_2 }}>
         <div data-blur_close_key="CHANGE_MENU_SHOW" className='user_info'>
-          <img data-blur_close_key="CHANGE_MENU_SHOW" src="https://images.unsplash.com/photo-1695765586912-39758d5de97d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDcxfEpwZzZLaWRsLUhrfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
-          <span data-blur_close_key="CHANGE_MENU_SHOW">HeT.</span>
+          <img data-blur_close_key="CHANGE_MENU_SHOW" src={avatarImg}/>
+          <span data-blur_close_key="CHANGE_MENU_SHOW">{userName}</span>
         </div>
         <CustomComponent keyblur="data-blur_close_key" valueblur="CHANGE_MENU_SHOW">
           <div onClick={onOffClick} className='on_off hoverBackground_2'>
@@ -165,7 +180,7 @@ function MenuModal({ show }) {
           </div>
         </CustomComponent>
         <div className='on_off_menu' style={{ background: backgroundColor_2 }}>
-          <div className='on_off_item hoverBackground_2'>
+          <div onClick={() => {dispatch({type: 'CHANGE_LOGIN', value: true})}} className='on_off_item hoverBackground_2'>
             <img src={lock} />
             <span>Lock</span>
           </div>

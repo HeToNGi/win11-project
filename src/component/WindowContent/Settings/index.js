@@ -1,32 +1,64 @@
 import { useEffect, useState, Fragment, useRef } from 'react';
-import '../../style/Settings.css'
+import '../../../style/Settings.css'
 // import '../../index.css'
 import anime from 'animejs';
-import { optionList, themes } from '../../util/constant.js'
-import data from '../../util/settingsData.json';
+import { optionList, themes } from '../../../util/constant.js'
+import { post } from '../../../util/axios.js'
+import data from '../../../util/settingsData.json';
 import { useSelector, useDispatch } from 'react-redux';
-
+import checkicon from '../../../assets/checkicon.svg';
+import microsoft from '../../../assets/microsoft.svg';
 const UserInfo = () => {
+  const userInfo = useSelector((state) => state.user_info);
+  const dispatch = useDispatch();
+
+  // 上传头像
+  const onAvatarInputChange = (e) => {
+    const file = e.target.files[0];
+    if (!file.type.startsWith('image/')) {
+      alert('请选择图片文件！');
+      inputElement.value = ''; // 清空文件选择
+    }
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const imageData = e.target.result;
+      // 将 imageData 发送到服务器
+      post('/change_avatar_img', {
+        user_name: userInfo.user_name,
+        avatar_img: imageData,
+        telephone_number: userInfo.telephone_number,
+      }).then((res) => {
+        const { avatar_img } = res.data;
+        dispatch({type: 'CHANGE_USER_INFO', value: {
+          avatar_img: avatar_img,
+        }});
+      })
+    };
+    reader.readAsDataURL(file);
+  }
   return (
     <div className='hoverBackground_2 setting_userinfo'>
       <div className='avatar_img'>
-        <img src="https://images.unsplash.com/photo-1695765586912-39758d5de97d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDcxfEpwZzZLaWRsLUhrfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60" />
+        <div className='upload_avatar'>
+          <img src={checkicon} />
+          <input type="file" onChange={onAvatarInputChange} className='avatar_img' accept="image/*" />
+        </div>
+        <img src={userInfo.avatar_img} />
       </div>
       <div className='userinfo_name'>
         <span className='name'>
-          HeT
+          {userInfo.user_name}
         </span>
-        <span>
-          Local Accenr
+        <span style={{ color: 'rgba(0, 0, 0, 0.5)' }}>
+          {userInfo.telephone_number}
         </span>
       </div>
     </div>
   )
 }
+// Local Accenr
 // 日期弹窗
 function Settings({}) {
-  // console.log(1, '111')
-  // const time = useSelector(s => s.time);
   const [selectIndex, setSelectIndex] = useState(0);
   const [currentSelectData, setCurrentSelectData] = useState([]);
   const themeName = useSelector((state) => state.themes.name);
@@ -60,6 +92,14 @@ function Settings({}) {
     }).play();
     setSelectIndex(i);
   }
+  useEffect(() => {
+    const img1 = document.querySelector('#desktop_background_image');
+    img1.src = img1.getAttribute('data-src');
+    themes.forEach((t) => {
+      const img = document.querySelector('#'+t.name);
+      img.src = img.getAttribute('data-src');
+    });
+  }, [])
   useEffect(() => {
     setting_right.current.removeEventListener('wheel', () => {})
     setting_right.current.addEventListener('wheel', () => {
@@ -117,7 +157,7 @@ function Settings({}) {
     return (
       <div key={n + ele.type} className='personalise_top'>
         <div className='display_personalise'>
-          <img src={desktop_background_image}  alt='desktop_background_image'/>
+          <img id="desktop_background_image" data-src={desktop_background_image}  alt='desktop_background_image'/>
         </div>
         <div className='themes_content'>
           <div>Select a theme to apply</div>
@@ -125,10 +165,42 @@ function Settings({}) {
             {themes.map(t => {
               return (
                 <div key={t.name} style={{border: themeName === t.name ? `2px solid ${activeColor}` : 'none'}} onClick={() => {onChangeThemes(t)}}>
-                  <img src={t.desktop_background_image} alt="desktop_background_image" />
+                  <img id={t.name} data-src={t.desktop_background_image} alt="desktop_background_image" />
                 </div>
               )
             })}
+          </div>
+        </div>
+      </div>
+    )
+  };
+  const renderSysTop = () => {
+    return (
+      <div className='systop_content'>
+        <div className='systop_left'>
+          <div className='systop_them'>
+            <img src={desktop_background_image}  alt='desktop_background_image'/>
+          </div>
+          <div className='systop_left_des'>
+            <div>Liber-V</div>
+            <div>NS14A8</div>
+            <div>Rename</div>
+          </div>
+        </div>
+        <div className='systop_right'>
+          <div className='hoverBackground_2'>
+            <img src={microsoft} />
+            <div className='systop_right_title'>
+              <div>Microsoft 365</div>
+              <span>View benefits</span>
+            </div>
+          </div>
+          <div className='hoverBackground_2'>
+            <img src="/settings/update.svg" />
+            <div className='systop_right_title'>
+              <div>Windows Update</div>
+              <span>You'r up to date</span>
+            </div>
           </div>
         </div>
       </div>
@@ -168,6 +240,8 @@ function Settings({}) {
                           return renderSubHeading(o.name, ele);
                         case "personaliseTop":
                           return renderPersonaliseTop(o.name, ele);
+                        case "sysTop":
+                          return renderSysTop();
                         default: return ''
                       }
                     })

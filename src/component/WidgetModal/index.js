@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import '../../style/WidgetModal.css';
 import anime from 'animejs';
 import { get } from '../../util/axios.js';
-import Weather from './Weather'
-import { useSelector, useDispatch } from 'react-redux';
+import Weather from './Weather';
+import Time from './Time';
+import { useDispatch } from 'react-redux';
 import StockPrice from './StockPrice';
 
 function WidgetModal({ show }) {
@@ -69,7 +70,7 @@ function WidgetModal({ show }) {
     <div data-blur_close_key="CHANGE_WIDGET_SHOW" className='widget_content'>
     <div data-blur_close_key="CHANGE_WIDGET_SHOW" className='news_content hiddeScroll'>
       <div data-blur_close_key="CHANGE_WIDGET_SHOW" className='time_widget'>
-        11:40 AM
+        <Time />
       </div>
       <div className='we_stock_class'>
         <div className='wea_class'>
