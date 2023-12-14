@@ -8,7 +8,7 @@ import { createStore } from 'redux'
 import rootReducer from './reducers'
 
 let store = createStore(rootReducer)
-
+window.ENV = isEnvDevelopment
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
