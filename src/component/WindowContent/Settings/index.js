@@ -176,7 +176,7 @@ function Settings({}) {
   };
   const renderSysTop = () => {
     return (
-      <div className='systop_content'>
+      <div key='sysTop' className='systop_content'>
         <div className='systop_left'>
           <div className='systop_them'>
             <img src={desktop_background_image}  alt='desktop_background_image'/>
@@ -241,7 +241,7 @@ function Settings({}) {
                         case "personaliseTop":
                           return renderPersonaliseTop(o.name, ele);
                         case "sysTop":
-                          return renderSysTop();
+                          // return renderSysTop();
                         default: return ''
                       }
                     })

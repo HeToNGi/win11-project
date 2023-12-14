@@ -1,0 +1,24 @@
+.product_collection_card_title {
+  font-size: 20px;
+  color: #131316;
+  margin-bottom: 5px;
+  /* display: flex; */
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+}
+.product_collection_card_title:hover div {
+  transform: translateX(0);
+  color: #0f2770
+}
+.product_collection_card_title div {
+  transition: transform 0.1s ease-in-out;
+  transform: translateX(-10px)
+}
+.product_collection_card_title div:hover {
+  transform: translateX(0);
+  color: #0f2770
+}
+
