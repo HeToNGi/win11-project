@@ -77,7 +77,7 @@ const CallContacts = ({ onListItemClick, calling }) => {
     })
   }
   const getCallRecord = () => {
-    get('http://localhost:8080/call_record', {telephone_number: userInfo.telephone_number}).then(res => {
+    get('/call_record', {telephone_number: userInfo.telephone_number}).then(res => {
       if (res.code === 0 && res.data) {
         const list = res.data.map(d => {
           const isCaller = userInfo.telephone_number === d.caller;

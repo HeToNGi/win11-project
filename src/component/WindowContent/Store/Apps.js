@@ -7,7 +7,7 @@ import Slider from './Slider';
 function Apps() {
   const [sliderList, setSliderList] = useState([]);
   useEffect(() => {
-    get('http://localhost:8080/store_slider?type=apps').then(res => {
+    get('/store_slider?type=apps').then(res => {
       setSliderList(res.data);
     });
   }, [])

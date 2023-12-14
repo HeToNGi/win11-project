@@ -28,16 +28,16 @@ function Home() {
   useEffect(() => {
     if (t) return;
     t = setTimeout(() => {
-      get('http://localhost:8080/store_slider?type=home').then(res => {
+      get('/store_slider?type=home').then(res => {
         setSliderList(res.data);
       });
-      get('http://localhost:8080/store_apps?type=home').then(res => {
+      get('/store_apps?type=home').then(res => {
         setHomeApps(res.data);
       });
-      get('http://localhost:8080/store_games?type=home').then(res => {
+      get('/store_games?type=home').then(res => {
         setHomeGames(res.data);
       });
-      get('http://localhost:8080/store_movies?type=home').then(res => {
+      get('/store_movies?type=home').then(res => {
         setHomeMovies(res.data);
       });
       clearTimeout(t)

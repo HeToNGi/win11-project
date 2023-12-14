@@ -250,7 +250,7 @@ function FaceTime({ parameter }) {
 
   const addCallRecord = (key) => {
     if (receiver) {
-      post('http://localhost:8080/add_callrecord', { 
+      post('/add_callrecord', { 
         caller: userInfo.telephone_number,
         receiver,
         start_time: startTime + '',
