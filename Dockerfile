@@ -9,7 +9,7 @@ COPY package*.json ./
 
 # 安装依赖
 RUN npm install --registry=https://registry.npm.taobao.org/
-RUN npm install @babel/plugin-proposal-private-property-in-object
+RUN npm install @babel/plugin-proposal-private-property-in-object --registry=https://registry.npm.taobao.org/
 
 # 复制应用程序代码
 COPY . .
