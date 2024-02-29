@@ -120,3 +120,45 @@
   background: #005fb8;
   color: #fff;
 }
+.movies_tvlist {
+  height: 600px;
+  display: flex;
+  justify-content: space-between;
+}
+.movies_tvlist > div {
+  width: 49.5%;
+  height: 100%;
+} 
+.movies_section_card {
+  width: 100%;
+  height: 95%;
+  transition: transform 0.1s ease-in-out;
+  cursor: pointer;
+  transform: translateY(5%);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.movies_section_card:hover {
+  transform: translateY(0)
+}
+.movies_section_card .movies_section_card_imgs {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-between;
+  border-radius:10px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.movies_section_card .movies_section_card_title {
+  font-weight: 700;
+  font-size: 18px;
+}
+.movies_section_card .movies_section_card_key {
+  font-size: 14px;
+}
+.movies_section_card .movies_section_card_imgs img {
+  flex: 1 1 auto;
+  width: 30%;
+  object-fit: cover;
+}

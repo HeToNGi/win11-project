@@ -396,6 +396,34 @@ export const APP_PRO = {
     appName: 'facetime',
     taskbar: false,
     desktopShortcut: false,
+  },
+  mineClearance: {
+    icon: '/app/mine_clearance.svg',
+    title: 'MINE Clearance',
+    appName: 'mineClearance',
+    taskbar: false,
+    desktopShortcut: false,
+  },
+  noted: {
+    icon: '/app/noted.svg',
+    title: 'NotePad',
+    appName: 'noted',
+    taskbar: false,
+    desktopShortcut: false,
+  },
+  whiteborad: {
+    icon: '/app/whiteborad.svg',
+    title: 'Whiteborad',
+    appName: 'whiteborad',
+    taskbar: false,
+    desktopShortcut: false,
+  },
+  map: {
+    icon: '/app/map.svg',
+    title: 'Map',
+    appName: 'map',
+    taskbar: false,
+    desktopShortcut: false,
   }
 }
 export const ALL_APPS = [
@@ -477,14 +505,24 @@ export const ALL_APPS = [
       title: 'Whiteborad',
       appName: 'whiteborad',
       isPinned: true,
-  }, {
+    }, {
       icon: '/app/camera.svg',
       title: 'Camera',
       appName: 'camera',
       isPinned: true,
-  }, {
-    icon: '/app/facetime.svg',
-    title: 'FaceTime',
-    appName: 'facetime',
-    isPinned: true,
-  }]
+    }, {
+      icon: '/app/facetime.svg',
+      title: 'FaceTime',
+      appName: 'facetime',
+      isPinned: true,
+    }, {
+      icon: '/app/mine_clearance.svg',
+      title: 'MINE Clearance',
+      appName: 'mineClearance',
+      isPinned: true,
+    }, {
+      icon: '/app/map.svg',
+      title: 'Map',
+      appName: 'map',
+      isPinned: true,
+    }]

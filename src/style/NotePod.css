@@ -1,0 +1,23 @@
+.notepod_header {
+  display: flex;
+}
+.notepod_header div {
+  /* height: 40px; */
+  font-size: 14px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+.notepod_content {
+  height: 100%;
+}
+.notepod_body {
+  height: calc(100% - 33px);
+}
+.notepod_body textarea {
+  min-height: 100%;
+  width: 100%;
+  /* height: 100%; */
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}

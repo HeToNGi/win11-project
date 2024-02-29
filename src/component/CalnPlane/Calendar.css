@@ -1,0 +1,42 @@
+.calendar_content {
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+}
+.calendar_header {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.calendar_body {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.calendar_item {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+.calendar_header_top {
+  font-weight: 600;
+  font-size: 25px;
+}
+.calendar_header_bottom {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.calendar_header_bottom div {
+  padding: 0 5px;
+  width: calc(100% / 7);
+  font-size: 12px;
+  text-align: center;
+}

@@ -9,6 +9,7 @@ import DescCard from './component/DescCard';
 import NormalGameCard from './component/NormalGameCard';
 import DescGameCard from './component/DescGameCard';
 import TitleButton from './component/TitleButton';
+import TrendingCollection from './component/TrendingCollection';
 
 // import anime from 'animejs';
 import { useSelector } from 'react-redux';
@@ -58,6 +59,20 @@ function Home() {
       return;
     }
   }, [trendingCollectionsSelect, homeApps, homeGames, homeMovies])
+  const renderMoviesSection = (pro) => {
+    const {data} = pro;
+    return (
+      <div className='card_content movies_section_card'>
+        <div className='movies_section_card_key'>{data.key}</div>
+        <div className='movies_section_card_title'>{data.title}</div>
+        <div className='movies_section_card_imgs'>
+          {data.imgs.map(src => {
+            return <img key={src} src={src} />
+          })}
+        </div>
+      </div>
+    )
+  }
   return (
     <div className='store_category_content'>
       <Slider list={sliderList} />
@@ -156,6 +171,42 @@ function Home() {
         }
         title="New Movies"
       />
+      <div className='speace' />
+      <CardSlider
+        height={'400px'}
+        slidesPerView={4}
+        Card={renderMoviesSection}
+        list={
+          useMemo(() => {
+            const result = [];
+            function pushToRes(key, title, movies) {
+              if (movies) {
+                const imgs = movies.map(i => i.img);
+                result.push({
+                  key,
+                  title,
+                  imgs,
+                });
+              }
+            }
+
+            pushToRes('ACTION & ADVENTURE', '体验肾上腺素激增', homeMovies.action_adventure);
+            pushToRes('KIDS & FAMILY', '孩子们的电影之夜', homeMovies.kids_family);
+            pushToRes('DRAME', '经典电影及更多', homeMovies.drama);
+            pushToRes('COMEDY', '大声笑', homeMovies.comedy);
+            return result;
+          }, [homeMovies])
+        }
+      />
+      <div className='speace' />
+      <div className='movies_tvlist'>
+        <div>
+          <TrendingCollection title="Top-selling movies" data={homeMovies.top_selling || []} />
+        </div>
+        <div>
+          <TrendingCollection title="Top-selling TV shows" data={homeMovies.top_selling_tv || []} />
+        </div>
+      </div>
     </div>
   );
 }

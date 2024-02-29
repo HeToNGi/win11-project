@@ -134,7 +134,7 @@ const reducer = (state = initialState, action) => {
         day: t.getDay(), // 星期
         date: t.getDate(), // 日
         hours: t.getHours(), // 小时
-        minutes: t.getMinutes(), // 分钟
+        minutes: t.getMinutes() < 10 ? '0'+t.getMinutes() : t.getMinutes(), // 分钟
         seconds: t.getSeconds(), // 秒
         dayString: '星期' + dayMap[t.getDay()]
       }

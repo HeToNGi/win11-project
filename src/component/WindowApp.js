@@ -9,6 +9,10 @@ import Window from './Window';
 import Currency from './WindowContent/Currency';
 import Camera from './WindowContent/Camera';
 import FaceTime from './WindowContent/FaceTime';
+import MineClearance from './WindowContent/MineClearance';
+import NotePod from './WindowContent/NotePod';
+import WhitePlan from './WindowContent/WhitePlan';
+import MapContent from './WindowContent/MapContent';
 
 function WindowApp() {
   const windowApps = useSelector((state) => state.window_apps);
@@ -26,6 +30,10 @@ function WindowApp() {
       case 'het': return <Currency parameter={parameter} />;
       case 'camera': return <Camera parameter={parameter} />;
       case 'facetime': return <FaceTime parameter={parameter} />;
+      case 'mineClearance': return <MineClearance parameter={parameter} />;
+      case 'noted': return <NotePod parameter={parameter} />;
+      case 'whiteborad': return <WhitePlan parameter={parameter} />;
+      case 'map': return <MapContent parameter={parameter} />;
       default: return ''
     }
   }

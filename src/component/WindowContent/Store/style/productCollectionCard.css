@@ -1,8 +1,8 @@
-.product_collection_card_title {
+/* .product_collection_card_title {
   font-size: 20px;
   color: #131316;
   margin-bottom: 5px;
-  /* display: flex; */
+  display: flex;
   padding: 10px;
   border-radius: 10px;
   font-weight: 600;
@@ -20,5 +20,5 @@
 .product_collection_card_title div:hover {
   transform: translateX(0);
   color: #0f2770
-}
+} */
 
