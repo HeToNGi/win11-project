@@ -1,71 +1,140 @@
-# Getting Started with Create React App
+# Win11-Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+This open source project is made in the hope to replicate the Windows 11 desktop experience on web, using standard web technologies like React, CSS (SCSS), and JS.
 
-In the project directory, you can run:
+## Notice
 
-### `npm start`
+> This project is **not in anyway affiliated with Microsoft** and **should not be confused with Microsoft’s Operating System** or Products.
+> This is **not** a Windows 365 cloud PC.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## _This project is still a work in progress._
 
-### `npm test`
+#### 在线体验🌈: [win11-Project](http://152.136.52.163:6710)登录可以使用任何名称
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Home](./public/img/home.jpg)
 
-### `npm run build`
+## Translation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can find other language versions of Win11React here.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Simplified Chinese(**[中文简体](https://github.com/inwinter04/win11React_CN)**)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Gallery
 
-### `npm run eject`
+![image](https://user-images.githubusercontent.com/89068816/154832868-6ec81a0b-0bc3-4e77-a4bf-3391b852fe9c.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![pic1](./public/img/gallery2.jpg)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![image](https://user-images.githubusercontent.com/89068816/154832942-b3e435dd-5fe4-4bc1-a9be-34262698625d.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Why
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+WHY NOT? Why not just waste a week of your life creating a React project, just to cover up your insecurities of how incompetent you are. Just why not!
 
-## Learn More
+# Features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [x] Start Menu, Search Menu and Widgets
+- [x] Desktop and Right Click action
+- [x] Side Navigation and Calendar View
+- [x] Snap windows in different layouts
+- [x] Browser, Store, Terminal, Calculator
+- [x] Notepad, Vscode, Whiteboard
+- [x] File Explorer + Setting
+- [x] Drag and Resize windows
+- [x] Startup and Lock screen
+- [x] Themes and Background
+- [x] Multilang Support
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+📑 [Suggest More](https://github.com/blueedgetechno/win11React/issues/new/choose)
 
-### Code Splitting
+# Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Framework - React (^17.0.2) + Redux
+- Component/UI Library - None!!
+- Styling Solution - SCSS and CSS Modules (tailwind).
+- Icons - fontawesome
 
-### Analyzing the Bundle Size
+## FAQ
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Is this the full operating system?
+  - No, This is not a full operating system and It is also not affiliated by Microsoft in anyway.
+- How long did it take?
+  - Honestly It took 2-3 days collecting assets, 2-3 planning and about 6 days programming it.
+- Did you use any UI/Library?
+  - No.
+- Can I contribute?
+  - Yes, you can! Open an issue, create a pull request, head over to [discussions](https://github.com/blueedgetechno/win11React/discussions) or join the [Discord](https://discord.gg/NcjaNdwtnR).
+- Where did you get the inspiration from, if you have?
+  - I got the inspiration from [this youtube video](https://www.youtube.com/watch?v=OtOmxa9UMe8).
+- What is the answer of Life, the Universe, and Everything?
+  - 42
 
-### Making a Progressive Web App
+![Answer](./public/answer.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🌟 Star this project
 
-### Advanced Configuration
+### [⏫ Scroll to the ⭐️ button](#start-of-content)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+If you believe this project has potential, feel free to **star this repo** just like many amazing people have 👇
+![](https://user-images.githubusercontent.com/89068816/188550244-3cd2bca6-7135-418f-9dcd-25ea6bd96d5f.gif)
 
-### Deployment
+## Local Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# Docker
 
-### `npm run build` fails to minify
+To use docker use the following command:
+`docker run -d --restart unless-stopped --name win11react -p 3000:3000 blueedge/win11react:latest`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Home Assistant
 
+[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Funofficial-skills%2Faddons)
+
+# Balena-Cloud
+
+[![Balena Deploy Button](https://www.balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/blueedgetechno/win11React)
+
+---
+
+# Compiled
+
+You can find a compiled `.exe` in the **Releases** section or via clicking [HERE](https://github.com/blueedgetechno/win11React/releases)
+
+**WINGET - WINDOWS PACKAGE MANAGER**
+If you have one of the latest windows builds then you can enter the command below in **CMD**
+
+`winget install blueedge.win11react`
+
+## Online Deployment
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Fblueedgetechno%2Fwin11React&envs=PORT&PORTDesc=Port+of+the+application&PORTDefault=3000&referralCode=BatemaDevelopment)
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/blueedgetechno/win11React)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fblueedgetechno%2Fwindows11%2F&project-name=windows11&repo-name=windows11-react&demo-title=Windows%2011%20Demo&demo-description=Static&demo-url=https%3A%2F%2Fwin11.blueedge.me%2F)
+
+## Contributors
+
+<a href="https://github.com/blueedgetechno/win11React/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=blueedgetechno/win11React" />
+</a>
+
+### Known Issues
+
+- Blur not working in Firefox browser.
+
+###### Solution:
+
+1. Open `about:config` in your firefox browser.
+2. Search for `layout.css.backdrop-filter.enabled` and set it to `true`.
+
+## License
+
+⚖️ CC0-1.0 License
+
+## Sharing
+
+Although our license does allow for this project to be reposted, modified and shared without permission from us, we do kindly ask that credits are given to the original GitHub page and the Win11 react team when reposting the project publicly.
