@@ -10,33 +10,34 @@
 
 ## 目前正在优化中
 
-#### 在线体验🌈: [win11-Project](http://152.136.52.163:6710) 注意：登录可以使用任何名称
+#### 在线体验🌈: [win11-Project](http://152.136.52.163:6710) 
+注意：登录可以使用任何名称
 
-![Home](./public/img/home.jpg)
+![image](http://152.136.52.163:8080/images/home.png)
 
 # 展示
 
-![image](https://user-images.githubusercontent.com/89068816/154832868-6ec81a0b-0bc3-4e77-a4bf-3391b852fe9c.png)
+![image](http://152.136.52.163:8080/images/87401d9d7fb8703e0a13aa0e0342069.png)
+![image](http://152.136.52.163:8080/images/d231444e5b5ef313fc9166445e71de6.png)
+![image](http://152.136.52.163:8080/images/75c8b7298506016dd1874156cda91c2.png)
+![image](http://152.136.52.163:8080/images/baf26fcba2e978aa26640d55a5f094a.png)
+![image](http://152.136.52.163:8080/images/72f8acb18baa5a652223df67e3c2bee.png)
 
-![image](https://user-images.githubusercontent.com/89068816/154832942-b3e435dd-5fe4-4bc1-a9be-34262698625d.png)
-![image](https://user-images.githubusercontent.com/89068816/154832942-b3e435dd-5fe4-4bc1-a9be-34262698625d.png)
-![image](https://user-images.githubusercontent.com/89068816/154832942-b3e435dd-5fe4-4bc1-a9be-34262698625d.png)
-![image](https://user-images.githubusercontent.com/89068816/154832942-b3e435dd-5fe4-4bc1-a9be-34262698625d.png)
 
 
-# 功能
+# 前景规划
 
-- [x] Start Menu, Search Menu and Widgets
-- [x] Desktop and Right Click action
-- [x] Side Navigation and Calendar View
-- [x] Snap windows in different layouts
-- [x] Browser, Store, Terminal, Calculator
-- [x] Notepad, Vscode, Whiteboard
-- [x] File Explorer + Setting
-- [x] Drag and Resize windows
-- [x] Startup and Lock screen
-- [x] Themes and Background
-- [x] Multilang Support
+- [x] 基本窗口功能
+- [x] 主题切换
+- [ ] 日期选择
+- [x] 浏览器
+- [x] ai对话
+- [ ] 地图
+- [ ] 文件系统
+- [ ] 动态壁纸
+- [ ] 回收站
+- [ ] 全局搜索
+- [ ] 建立自己的可执行文件机制
 
 
 
