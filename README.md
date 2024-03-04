@@ -11,17 +11,21 @@
 ## 目前正在优化中
 
 #### 在线体验🌈: [win11-Project](http://152.136.52.163:6710) 
-注意：登录可以使用任何名称
+注意：登录可以使用【杜甫】
 
-![image](http://152.136.52.163:8080/images/home.png)
+![image](http://152.136.52.163:8080/images/home.jpg)
 
 # 展示
 
-![image](http://152.136.52.163:8080/images/87401d9d7fb8703e0a13aa0e0342069.png)
-![image](http://152.136.52.163:8080/images/d231444e5b5ef313fc9166445e71de6.png)
-![image](http://152.136.52.163:8080/images/75c8b7298506016dd1874156cda91c2.png)
-![image](http://152.136.52.163:8080/images/baf26fcba2e978aa26640d55a5f094a.png)
-![image](http://152.136.52.163:8080/images/72f8acb18baa5a652223df67e3c2bee.png)
+![image](http://152.136.52.163:8080/images/87401d9d7fb8703e0a13aa0e0342069.jpg)
+
+![image](http://152.136.52.163:8080/images/d231444e5b5ef313fc9166445e71de6.jpg)
+
+![image](http://152.136.52.163:8080/images/75c8b7298506016dd1874156cda91c2.jpg)
+
+![image](http://152.136.52.163:8080/images/baf26fcba2e978aa26640d55a5f094a.jpg)
+
+![image](http://152.136.52.163:8080/images/72f8acb18baa5a652223df67e3c2bee.jpg)
 
 
 
