@@ -17,7 +17,7 @@
 
 # 展示
 
-![image](https://github.com/HeToNGi/win11-project/blob/master/public/87401d9d7fb8703e0a13aa0e0342069.jpg)
+![image](https://github.com/HeToNGi/win11-project/blob/master/public/72f8acb18baa5a652223df67e3c2bee.png)
 
 ![image](https://github.com/HeToNGi/win11-project/blob/master/public/d231444e5b5ef313fc9166445e71de6.jpg)
 
