@@ -13,7 +13,7 @@
 #### 在线体验🌈: [win11-Project](http://154.8.175.183:3000/) 
 注意：登录可以使用【杜甫】
 
-![image](http://154.8.175.183:8080/home.jpg)
+![image](https://github.com/HeToNGi/win11-project/blob/master/public/home.png)
 
 # 展示
 
