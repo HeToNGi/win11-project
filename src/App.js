@@ -65,7 +65,7 @@ function App() {
   return (
     <Fragment>
       <Login />
-      <FaceTimeNotification />
+      {/* <FaceTimeNotification /> */}
       <div onClick={onDisktopClick} onMouseDown={desktopAppMouseDown} onMouseUp={desktopAppMouseUp} className={`App ${themeName}`} style={{backgroundImage: `url(${desktop_background_image})`}}>
         <div className='desktop_class'>
           <div className='desktop_cont'>

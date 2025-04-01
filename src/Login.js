@@ -53,10 +53,11 @@ function Login() {
             }});
           }
         })
-        window.socket_rs = new WebSocket('ws://152.136.52.163:8081/', win11_telephone_number); // 或者使用 wss:// for secure connections
-        window.socket_rs.addEventListener('open', (event) => {
-          dispatch({type: 'CHANGE_LOGIN', value: false});
-        });
+        dispatch({type: 'CHANGE_LOGIN', value: false});
+        // window.socket_rs = new WebSocket('ws://152.136.52.163:8081/', win11_telephone_number); // 或者使用 wss:// for secure connections
+        // window.socket_rs.addEventListener('open', (event) => {
+        //   dispatch({type: 'CHANGE_LOGIN', value: false});
+        // });
       });
     } else {
       dispatch({type: 'CHANGE_LOGIN', value: false});
