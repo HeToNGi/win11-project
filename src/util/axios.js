@@ -2,7 +2,8 @@
 import axios from 'axios'
 // 创建一个自定义的 Axios 实例
 const customAxios = axios.create({
-  baseURL: 'http://localhost:8080', // 设置基本的请求 URL
+  // baseURL: 'http://localhost:8080', // 设置基本的请求 URL
+  baseURL: 'http://154.8.175.183:8080', // 设置基本的请求 URL
   timeout: 20000, // 设置请求超时时间
   headers: {
     'Content-Type': 'application/json', // 设置请求头
