@@ -424,7 +424,17 @@ export const APP_PRO = {
     appName: 'map',
     taskbar: false,
     desktopShortcut: false,
-  }
+  },
+  pokemonfandom: {
+    icon: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif',
+    title: 'Pokémon',
+    appName: 'pokemonfandom',
+    taskbar: false,
+    desktopShortcut: true,
+    parameter: {
+      src: 'http://154.8.175.183:8080/pokdex/index.html'
+    }
+  },
 }
 export const ALL_APPS = [
     {

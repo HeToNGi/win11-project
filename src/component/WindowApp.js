@@ -28,6 +28,7 @@ function WindowApp() {
       case 'google': return <Google parameter={parameter} />;
       case 'store': return <Store parameter={parameter} />;
       case 'het': return <Currency parameter={parameter} />;
+      case 'pokemonfandom': return <Currency parameter={parameter} />;
       case 'camera': return <Camera parameter={parameter} />;
       case 'facetime': return <FaceTime parameter={parameter} />;
       case 'mineClearance': return <MineClearance parameter={parameter} />;

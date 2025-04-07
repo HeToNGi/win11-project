@@ -54,14 +54,14 @@ function WidgetModal({ show }) {
         top: 0,
         left: 0,
         parameter: {
-          src: n.href
+          src: n.url
         }
       },
     });
   }
   const backgroundStyle = (ele) => {
-    if (ele.img) {
-      return { 'backgroundImage': 'url('+ ele.img +')'}
+    if (ele.thumbnail_pic_s) {
+      return { 'backgroundImage': 'url('+ ele.thumbnail_pic_s +')'}
     } else {
       return { 'background': `linear-gradient(to top, ${randomColors[ele.backgroundColorIndex][0]}, ${randomColors[ele.backgroundColorIndex][1]})`}
     }
@@ -87,7 +87,7 @@ function WidgetModal({ show }) {
                 n.map(ele => {
                   return (
                     <div key={ele.title} className={`new_card_item ${n.length > 1 ? 'new_card_item_2' : 'new_card_item_1'}`} style={backgroundStyle(ele)}>
-                      <div style={!ele.img ? { background: 'none' } : {}} onClick={() => {onNewsClick(ele)}} className='new_title'>
+                      <div style={!ele.thumbnail_pic_s ? { background: 'none' } : {}} onClick={() => {onNewsClick(ele)}} className='new_title'>
                         {ele.title}
                       </div>
                     </div>
